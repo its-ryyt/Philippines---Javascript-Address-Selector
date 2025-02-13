@@ -94,9 +94,9 @@ Load Province Function
 ### Full Code
 
 #### HTML
-https://github.com/wilfredpine/philippine-address-selector/blob/main/index.html
+https://github.com/its-ryyt/Philippines---Javascript-Address-Selector/blob/main/index.html
 
 #### JS
-https://github.com/wilfredpine/philippine-address-selector/blob/main/ph-address-selector.js
+https://github.com/its-ryyt/Philippines---Javascript-Address-Selector/blob/main/ph-address-selector.js
 
 
