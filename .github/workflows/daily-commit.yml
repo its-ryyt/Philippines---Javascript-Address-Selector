@@ -32,4 +32,4 @@ jobs:
           git config --global user.name "github-actions[bot]"
           git add daily-log.txt
           git commit -m "Automated commit: $(date)"
-          git push https://x-access-token:${{ secrets.GH_PAT }}@github.com/its-ryyt/Philippines---Javascript-Address-Selector.git main
+          git push https://x-access-token:${{ secrets.PAT_TOKEN }}@github.com/its-ryyt/Philippines---Javascript-Address-Selector.git main
