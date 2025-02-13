@@ -1,7 +1,9 @@
-# Address Selector - Philippines
-### PH Address JSON file from https://github.com/isaacdarcilla/philippine-addresses
+# JS Address Selector - Philippines
+### PH Address JSON file from https://github.com/its-ryyt/Philippines---Javascript-Address-Selector/tree/main/ph-json
 
-![This is an image](https://lh3.googleusercontent.com/pw/AM-JKLU7NduoFSLoDW5Nz6l33o8-xRkynZIVAxuFjCYkKKmgtrTHxSSVz3gISZEsn9lb0OGG4MqIo0xAkygD0-5d0CV9VOpaqifVgEFgxc5k8ZYG3aiFvpLtUgq9XF69ONIwhKu9psfNKxDg8-XT4uf474DA=w909-h549-no?authuser=0)
+</br>
+
+![image](https://github.com/user-attachments/assets/54f83b90-13ef-4fce-8631-bcdf77f4b73b)
 
 ### PSA PSGC
 https://www.psa.gov.ph/classification/psgc
