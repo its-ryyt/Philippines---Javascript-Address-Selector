@@ -18,8 +18,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Update daily log file
-        run: |
-          echo "Last commit: $(date)" > daily-log.txt
+        run: echo "Last commit: $(date)" > daily-log.txt
 
       - name: Configure Git
         run: |
@@ -27,9 +26,9 @@ jobs:
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
 
       - name: Commit and push changes
+        env:
+          GH_TOKEN: ${{ secrets.PAT_TOKEN }}
         run: |
-          git config --global user.email "github-actions@github.com"
-          git config --global user.name "github-actions[bot]"
           git add daily-log.txt
-          git commit -m "Automated commit: $(date)"
-          git push https://x-access-token:${{ secrets.PAT_TOKEN }}@github.com/its-ryyt/Philippines---Javascript-Address-Selector.git main
+          git commit -m "Automated commit: $(date)" || exit 0  # Prevent failure if no changes
+          git push https://x-access-token:${GH_TOKEN}@github.com/its-ryyt/Philippines---Javascript-Address-Selector.git main
