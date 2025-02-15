@@ -17,19 +17,23 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
-          token: ${{ secrets.PAT_TOKEN }}
+          token: ${{ secrets.PAT_TOKEN }}  # Use GitHub's built-in token if possible
 
       - name: Update daily log file
         run: |
-          echo "Last commit: $(date)" > daily-log.txt
+          echo "Last commit: $(date -u +"%Y-%m-%d %H:%M:%S UTC")" > daily-log.txt
 
       - name: Configure Git
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
 
-      - name: Commit and push changes
+      - name: Commit and push changes if needed
         run: |
           git add daily-log.txt
-          git commit -m "Automated commit: $(date)" || exit 0  # Prevent failure if no changes
-          git push https://x-access-token:${{ secrets.GH_PAT }}@github.com/its-ryyt/Philippines---Javascript-Address-Selector.git main
+          if [[ -n "$(git status --porcelain)" ]]; then
+            git commit -m "Automated commit: $(date -u +"%Y-%m-%d %H:%M:%S UTC")"
+            git push https://x-access-token:${{ secrets.GH_PAT }}@github.com/its-ryyt/Philippines---Javascript-Address-Selector.git main
+          else
+            echo "No changes to commit"
+          fi
